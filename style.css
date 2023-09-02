@@ -1,0 +1,1160 @@
+:root {
+    --bs-green: #198754;
+    --bs-body: #26294D;
+    --bs-white: #fff;
+    --bs-gray: #6c757d;
+    --bs-gray-dark: #343a40;
+    --bs-primary: #0d6efd;
+    --bs-secondary: #6c757d;
+    --bs-light: #f8f9fa;
+    --bs-dark: #212529;
+    --bs-font: "Josefin Sans", sans-serif;
+    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --transition: 0.4s all ;
+    --spacing:1.05px
+}
+
+body{
+    background: var(--bs-body) ;
+    color: var(--bs-white);
+    overflow-x: hidden;
+    font-family: var(--bs-font);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+p{
+    letter-spacing: var(--spacing);
+}
+
+section{
+    margin-top: 100px;
+}
+
+/*================================= Start Header =================================*/
+
+.header{
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background:transparent;
+    transition: var(--transition);
+}
+
+header.active{
+    background: var(--bs-gray);
+}
+
+.Container-Nav{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Nav-Logo{
+    margin-left: 20px;
+}
+
+.Nav-Logo img{
+    width: 170px;
+   
+}
+
+.Container-Nav ul{
+    margin-right: 20px;
+    display: flex;
+}
+
+.Container-Nav ul li{
+    margin-right: 25px;
+}
+
+.Container-Nav ul li a{
+    color: var(--bs-white);
+    letter-spacing: var(--spacing);
+}
+
+.Container-Nav ul li a.active{
+    color: var(--bs-dark);
+}
+
+.fa-bars{
+    cursor: pointer;
+    display: none;
+    margin-right: 25px;
+}
+
+.Container-Nav ul.active{
+    right: 0;
+}
+
+@media screen and (max-width:810px) {
+    .fa-bars{
+        display: block;
+    }
+        
+    .Container-Nav ul{
+        position: absolute;
+        top: 80px;
+        right: -100%;
+        display: block;
+        background: var(--bs-light);
+        width: 90%;
+        padding: 20px;
+        transition: var(--transition);
+    }
+    
+    .Container-Nav ul li{
+        margin-top: 10px;
+        padding:  15px 5px ;
+        width: 100px;
+        transition: var(--transition);
+    }
+    
+    .Container-Nav ul li:hover{
+        background: var(--bs-gray);
+        width: 250px;
+        padding:  15px 5px ;
+    }
+
+    .Container-Nav ul li a{
+        color: var(--bs-dark);
+        padding:  15px 5px ;
+    }
+   
+}
+
+/*================================= End Header =================================*/
+/*================================= Start Home =================================*/
+
+.Container-Home{
+    display: flex;
+}
+
+.Home-Left{
+    width: 50%;
+    margin-left: 20px;
+    margin-top: 100px;
+}
+
+.Home-Left h1{
+    font-size: 50px;
+}
+
+.Home-Left p{
+    margin: 10px 0 35px ;
+}
+
+.Home-Left a{
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    padding: 18px 44px;
+    font-size: 18px;
+    border-radius: 0px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    transition: all .4s ease-in-out;
+    border: none;
+    background: #4E6EF1;
+    overflow: hidden;
+}
+
+.Home-Left a::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: var(--transition);
+}
+
+.Home-Left a:hover::after{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.Home-Right{
+    width: 50%;
+    margin-right: 20px;
+}
+
+.Home-Right img{
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:860px) {
+    .Container-Home{
+        flex-direction: column;
+    }
+    .Home-Left{
+        width: 90%;
+    }
+    .Home-Right{
+        margin: 20px auto;
+        width: 60%;
+    }
+    
+}
+
+@media screen and (max-width:500px) {
+   
+    .Home-Right{
+        width: 80%;
+    }
+    
+}
+
+
+/*================================= End Home =================================*/
+/*================================= Start Header =================================*/
+
+.All-Top{
+    text-align: center;
+}
+
+.All-Top h1{
+    font-size: 50px;
+    margin:0 auto 20px auto;
+    line-height: 55px;
+    width: 80%;
+}
+
+.All-Top p{
+    font-size:16px;
+    margin:0 auto 20px auto;
+    width: 60%;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+.About-Content{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.About-Cart{
+    width: 270px;
+    background: #282E63;
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    margin: 10px auto;
+    
+}
+
+.About-Cart:hover .map{
+    opacity: 0.1;
+}
+
+.map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: var(--transition);
+    
+}
+
+.map img{
+    width: 100%;
+    height: 100%;
+}
+
+.About-Cart i{
+    margin-bottom: 20px;
+}
+.About-Cart h4{
+    font-size: 35px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.About-Cart span{
+    font-size: 25px;
+    font-weight: 400;
+}
+
+
+@media screen and (max-width:690px) {
+    
+    .All-Top h1{
+        font-size: 40px;
+        width:90%;
+    }
+
+    .All-Top p{
+        width:80%;
+    }
+}
+
+@media screen and (max-width:470px) {
+    
+    .All-Top h1{
+        font-size: 35px;
+        width:90%;
+    }
+
+    .All-Top p{
+        width:90%;
+    }
+}
+
+
+/*================================= End About =================================*/
+/*================================= Start Largest  =================================*/
+
+.Largest{
+    display: flex;
+    margin: 0 30px;
+}
+
+.Largest-Left {
+    width: 50%;
+}
+
+.Largest-Left img{
+    width: 100%;
+    height: 100%;
+}
+
+.Largest-Right{
+    width: 50%;
+    margin-left: 20px;
+}
+
+.Largest-Right h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.Largest-Right p{
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 25px;
+}
+
+.Largest-Right h1{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.Largest-Circle{
+    display: flex;
+    gap: 20px;
+}
+
+.Largest-Circle-Cart{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.Circle{
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+    font-weight: 600;
+    border: 6px solid var(--bs-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px ;
+}
+
+.Minutes{
+    border: 6px solid var(--bs-green);
+}
+
+.Seconds{
+    border: 6px solid var(--bs-gray-dark);
+}
+
+.Largest-Right  a{
+    margin-top: 25px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    padding: 18px 44px;
+    font-size: 18px;
+    border-radius: 0px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    transition: all .4s ease-in-out;
+    border: none;
+    background: #4E6EF1;
+    overflow: hidden;
+}
+
+.Largest-Right a::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: var(--transition);
+}
+
+.Largest-Right a:hover::after{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+@media screen and (max-width:915px) {
+    
+    .Largest{
+        flex-direction: column;
+    }
+
+    .Largest-Left {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .Largest-Right{
+        width: 90%;
+        margin: 20px auto;
+    }
+}
+
+@media screen and (max-width:510px) {
+    .Largest-Circle{
+        flex-wrap: wrap;
+    }
+}
+
+
+/*================================= End Largest  =================================*/
+/*================================= Start Events =================================*/
+
+.Event-Content{
+   margin-top: 100px;
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   margin-right: auto ;
+   margin-left: auto ;
+}
+
+.Event-Cart{
+    background: #282E63;
+    display: flex;
+    padding: 50px 20px;
+    gap: 25px;
+    margin: 10px;
+}
+
+.Event-Cart img{
+    max-width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    width: 100%;
+    background-size: cover;
+}
+
+.Event-Cart div h3{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.Event-Cart div div {
+   display: flex;
+}
+
+.Event-Cart div div h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.Event-Cart div div span{
+    font-size: 16px;
+}
+
+.Event-Cart div p{
+    margin-top: 20px;
+    line-height: 28px;
+}
+
+@media screen and (max-width:880px) {
+    .Event-Content{
+        grid-template-columns: repeat(1,1fr);
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:615px) {
+    .Event-Cart{
+        flex-direction: column;
+    }
+    
+}
+
+/*================================= End Events =================================*/
+/*================================= Start Ticket =================================*/
+
+.Ticket{
+    margin-top: 100px;
+    width: 95%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    
+}
+
+.Ticket-Cart{
+    background: #282E63;
+    text-align: center;
+    padding: 30px 0;
+    width: 33%;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.Ticket-Cart h3{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.Ticket-Cart span{
+    padding: 12px 30px;
+    font-size: 30px;
+    font-weight: 700;
+    border-radius: 90px;
+    background: #26294D;
+    margin-bottom: 30px;
+}
+
+.Ticket-Cart ul{
+    margin-top: 30px;
+}
+
+.Ticket-Cart ul li{
+    font-size: 16px;
+    line-height: 35px;
+}
+
+.Ticket-Cart a{
+    margin-top: 25px;
+    position: relative;
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    padding: 18px 44px;
+    font-size: 18px;
+    border-radius: 0px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    transition: all .4s ease-in-out;
+    border: none;
+    background: transparent;
+    border: 2px solid #505478;
+    overflow: hidden;
+}
+
+.center a{
+    background:#4E6EF1;
+    border: 2px solid #4E6EF1;
+}
+
+.Ticket-Cart a::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: var(--transition);
+}
+
+.Ticket-Cart a:hover::after{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.Ticket-Circle-Right{
+    position: absolute;
+    top: 50%;
+    right: -40px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+}
+
+.Ticket-Circle-Left{
+    position: absolute;
+    top: 50%;
+    left: -40px;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+}
+
+.Offer{
+    width: 100%;
+    height: 35px;
+    background: var(--bs-primary);
+    position: absolute;
+    top: 25px;
+    right: -100px;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width:885px) {
+    .Ticket{
+        flex-direction: column;
+    }
+
+    .Ticket-Cart{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:555px) {
+    .Ticket-Cart{
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:340px) {
+    .Ticket-Cart{
+        width: 95%;
+    }
+}
+
+
+/*================================= End Ticket =================================*/
+/*================================= Start Speakers =================================*/
+
+.Speakers-Content{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 100px auto 0 auto;
+}
+
+.Speakers-Cart-Center{
+   margin: -50px 10px !important;
+}
+
+.Speakers-Cart{
+    width: 30%;
+    margin: 20px auto ;
+    text-align: center;
+    cursor: pointer;
+}
+
+.Speakers-Cart-Img{
+    background: #999;
+    height: 390px;
+    overflow: hidden;
+    position: relative;
+}
+
+.Speakers-Cart-Img img{
+    width: 100%;
+    height: 100%;
+}
+
+.Speakers-Cart-Img ul{
+    position: absolute;
+    bottom: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 55px;
+    background: var(--bs-primary);
+    transition: var(--transition);
+}
+
+.Speakers-Cart:hover .Speakers-Cart-Img ul{
+    bottom: 0%;
+}
+
+.Speakers-Cart-Img ul li{
+    margin-right: 20px;
+}
+
+.Speakers-Cart-Img ul li i{
+    font-size: 22px;
+}
+
+
+.Speakers-Cart-Info{
+    margin-top: 25px;
+}
+
+.Speakers-Cart-Info h3{
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.Speakers-Cart-Info span{
+    font-size: 18px;
+}
+
+
+@media screen and (max-width:885px) {
+    .Speakers-Content{
+       flex-direction: column;
+    }
+    
+    .Speakers-Cart-Center{
+       margin: 10px auto !important;
+    }
+    .Speakers-Cart{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:555px) {
+    .Speakers-Cart{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .Speakers-Cart{
+        width: 95%;
+    }
+}
+
+
+/*================================= End Speakers =================================*/
+/*================================= Start Testemonial =================================*/
+
+.Testemonial{
+    background: #282E63;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.Testemonial h1{
+    font-size: 50px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.Testemonial-Content{
+    margin-top: 50px;
+}
+
+.Testemonial-Dis{
+    font-size: 16px;
+    margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    line-height: 35px;
+}
+
+.Testemonial-Name{
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: var(--spacing);
+}
+
+.Testemonial-Jop{
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: var(--spacing);
+}
+
+@media screen and (max-width:600px) {
+    .Testemonial h1{
+        font-size:40px;
+        width: 90%;
+    }
+    
+}
+
+/*================================= End Testemonial =================================*/
+/*================================= Start Blog  =================================*/
+
+.Blog-Content{
+    padding: 0 30px;
+    display: flex;
+    gap: 20px;
+}
+
+.Blog-Cart{
+    background: #282E63;
+    width: 280px;
+    margin: 10px auto;
+}
+
+.Blog-Cart-Img{
+    width: 100%;
+    height: 220px;
+}
+
+.Blog-Cart-Img img{
+    width: 100%;
+    height: 100%;
+}
+
+.Blog-Info{
+    margin-top: 20px;
+    padding: 15px 20px;
+}
+
+.Blog-Info div{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.Blog-Info div h4{
+    font-size: 12px;
+}
+
+.Blog-Info p{
+    margin-bottom: 20px;
+    line-height: 30px;
+    cursor: pointer;
+}
+
+.Blog-Info p:hover{
+    color: var(--bs-primary);
+}
+
+.Blog-Info h5{
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.Blog-Info h5:hover{
+    letter-spacing: 1.7px;
+}
+
+
+@media screen and (max-width:885px) {
+    .Blog-Content{
+       flex-direction: column;
+    }
+
+    .Blog-Cart{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:555px) {
+    .Blog-Cart{
+        width: 75%;
+    }
+}
+
+@media screen and (max-width:350px) {
+    .Blog-Cart{
+        width: 99%;
+    }
+}
+
+/*================================= End Blog  =================================*/
+/*================================= Start Contact =================================*/
+
+.Contact-Form{
+    margin-top: 100px;
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.Contact-Form-Left{
+    flex: 2;
+}
+
+.Contact-Form-Left div{
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.Contact-Form-Left div input{
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    outline: none;
+    background: #282E63;
+    color: #fff;
+    border: 1px solid transparent;
+    border: none;
+    font-size: 20px;
+}
+
+.Contact-Form-Left .Contact-Bottom {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+}
+
+.Contact-Form-Left .Contact-Bottom textarea{
+   width: 100%;
+   display: block;
+   resize: none;
+   border: none;
+   padding: 20px ;
+   font-size: 25px;
+   outline: none; 
+   color: #fff;
+   background: #282E63;
+}
+
+.Contact-Bottom a{
+    margin-top: 25px;
+    position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 5;
+    border: none;
+    background: var(--bs-primary);
+    overflow: hidden;
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.Contact-Bottom a::after{
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 0%;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: var(--transition);
+}
+
+.Contact-Bottom a:hover::after{
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+
+.Contact-Form-Right{
+    flex: 1;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.Contact-Form-Right-Cart{
+    display: flex;
+    gap: 35px;
+}
+
+.Contact-Form-Right-Cart i{
+    background: #282E63;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Contact-Form-Right-Cart div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Contact-Form-Right-Cart div p{
+   font-size: 16px;
+   font-weight: 400;
+}
+
+@media screen and (max-width:870px) {
+    .Contact-Form{
+        flex-direction: column;
+    }
+    
+    .Contact-Form-Right{
+        margin-top: 20px;
+    }
+    
+}
+
+@media screen and (max-width:660px) {
+   
+    .Contact-Form-Left div{
+        display: block;
+        margin: 0px auto;
+    }
+
+    .Contact-Form-Left div input{
+        margin: 10px 0;
+    }
+    
+}
+
+/*================================= End Contact  =================================*/
+/*================================= Start Footer =================================*/
+
+footer{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #282E63;
+}
+
+.Footer{
+    padding: 50px 0;
+    width: 100%;
+}
+
+.Footer-Top{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid var(--bs-secondary);
+}
+
+.Footer-Top ul{
+    display: flex;
+}
+
+.Footer-Top ul li{
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+.Footer-Top ul li:hover{
+    color: var(--bs-primary);
+}
+
+.Footer-Bottom{
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 0 0;
+    margin: 0 auto;
+}
+
+.Footer-Bottom p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.Footer-Bottom p:hover{
+    color: var(--bs-primary);
+}
+
+.Footer-Bottom div{
+    display: flex;
+    gap: 25px;
+}
+
+.Footer-Bottom div i{
+    cursor: pointer;
+    font-size: 20px;
+    background: var(--bs-body);
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.Footer-Bottom div i:hover{
+    background: var(--bs-primary);
+}
+
+@media screen and (max-width:600px) {
+    
+    .Footer-Top ul{
+        flex-direction: column;
+    }
+
+    .Footer-Top ul li{
+        margin: 10px 0;
+    }
+    .Footer-Bottom{
+        flex-direction: column;
+        gap: 25px;
+    }
+}
+
+
+
+
